@@ -1,4 +1,4 @@
-# firstdraft
+# explor
 
 ## Project setup
 ```
