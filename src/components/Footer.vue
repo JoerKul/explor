@@ -2,11 +2,10 @@
   <div class="footer-basic">
     <footer>
       <div class="social">
-        <button><i class="fab fa-instagram"></i></button>
-        <button><i class="fab fa-instagram"></i></button>
-        <button><i class="fab fa-snapchat"></i></button>
-        <button><i class="fab fa-twitter"></i></button>
-        <button><i class="fab fa-facebook"></i></button>
+        <a><i class="fab fa-instagram"></i></a>
+        <a><i class="fab fa-snapchat"></i></a>
+        <a><i class="fab fa-twitter"></i></a>
+        <a><i class="fab fa-facebook"></i></a>
       </div>
       <ul class="list-inline">
         <li class="list-inline-item"><a href="#">Home</a></li>
@@ -60,7 +59,7 @@ export default {};
   padding-bottom: 25px;
 }
 
-.footer-basic .social > button {
+.footer-basic .social > a {
   font-size: 24px;
   width: 40px;
   height: 40px;
@@ -74,7 +73,7 @@ export default {};
   opacity: 0.75;
 }
 
-.footer-basic .social > button:hover {
+.footer-basic .social > a:hover {
   opacity: 0.9;
 }
 
