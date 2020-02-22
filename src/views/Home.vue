@@ -384,4 +384,8 @@ export default {};
   margin-top: 15px;
   margin-bottom: 20px;
 }
+
+.learn-more{
+  color: #0037ff;
+}
 </style>
