@@ -1,91 +1,74 @@
 <template>
   <div class="flex-container">
-    <div class="box">
+    <div v-for="item of result" v-bind:key="item.id" class="box">
       <figure class="snip1527">
         <div class="image">
-          <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample23.jpg"
-            alt="pr-sample23"
-          />
+          <img :src="item.urls.regular" alt="pr-sample23" />
         </div>
         <figcaption>
           <div class="date">
-            <span class="day">21</span><span class="month">Jul</span>
+            <span class="day">{{ randomDay() }}</span
+            ><span class="month"> {{ monthNames[randomMonth()] }}</span>
           </div>
-          <h3>The World Ended Yesterday</h3>
+          <h3>{{ item.description }}</h3>
           <p>
-            You know what we need, Hobbes? We need an attitude. Yeah, you
-            can&#39;t be cool if you don&#39;t have an attitude.
+            {{ item.alt_description }} You know what we need, Hobbes? We need an
+            attitude. Yeah, you can&#39;t be cool if you don&#39;t have an
+            attitude.
           </p>
         </figcaption>
-        <a href="#"></a>
-      </figure>
-    </div>
-    <div class="box">
-      <figure class="snip1527">
-        <div class="image">
-          <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample23.jpg"
-            alt="pr-sample23"
-          />
-        </div>
-        <figcaption>
-          <div class="date">
-            <span class="day">28</span><span class="month">Oct</span>
-          </div>
-          <h3>The World Ended Yesterday</h3>
-          <p>
-            You know what we need, Hobbes? We need an attitude. Yeah, you
-            can&#39;t be cool if you don&#39;t have an attitude.
-          </p>
-        </figcaption>
-        <a href="#"></a>
-      </figure>
-    </div>
-    <div class="box">
-      <figure class="snip1527">
-        <div class="image">
-          <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample23.jpg"
-            alt="pr-sample23"
-          />
-        </div>
-        <figcaption>
-          <div class="date">
-            <span class="day">23</span><span class="month">Aug</span>
-          </div>
-          <h3>The World Ended Yesterday</h3>
-          <p>
-            You know what we need, Hobbes? We need an attitude. Yeah, you
-            can&#39;t be cool if you don&#39;t have an attitude.
-          </p>
-        </figcaption>
-        <a href="#"></a>
-      </figure>
-    </div>
-    <div class="box">
-      <figure class="snip1527">
-        <div class="image">
-          <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample23.jpg"
-            alt="pr-sample23"
-          />
-        </div>
-        <figcaption>
-          <div class="date">
-            <span class="day">13</span><span class="month">Spt</span>
-          </div>
-          <h3>The World Ended Yesterday</h3>
-          <p>
-            You know what we need, Hobbes? We need an attitude. Yeah, you
-            can&#39;t be cool if you don&#39;t have an attitude.
-          </p>
-        </figcaption>
-        <a href="#"></a>
+        <router-link
+          :to="{ name: 'Detail', params: { url: item.urls.small, name: item.user.name, title: item.description} }" 
+          class="nav-link"
+          href="detail.html"
+          style="font-family: Montserrat, sans-serif;font-weight: bold;"
+        ></router-link>
       </figure>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data: () => ({
+    result: [],
+    monthNames: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ]
+  }),
+
+  mounted() {
+    this.axios
+      .get(
+        "https://api.unsplash.com/collections/775715/photos/?client_id=DK9r8Ru93BiZcxgmXWIuvSzHLTzHPgUqk_nuUKmdnco"
+      )
+      .then(response => (this.result = response.data))
+      .catch(e => {
+        this.errors.push(e);
+      });
+  },
+
+  methods: {
+    randomDay: function() {
+      return Math.floor(Math.random() * (28 - 1 + 1)) + 1;
+    },
+    randomMonth: function() {
+      return Math.floor(Math.random() * (11 - 1 + 1)) + 1;
+    }
+  }
+};
+</script>
 
 <style scoped>
 .flex-container {
