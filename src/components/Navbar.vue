@@ -41,36 +41,48 @@
               >About</router-link>
           </li>
         </ul>
-        <span class="navbar-text actions">
+        <div class="navbar-text actions">
           <a
             class="login"
-            href="login.html"
+            href=""
             style="font-family: Montserrat, sans-serif;"
-            
-            >Log In</a
-          ><a
+            @click="login"
+            v-if="!$auth.isAuthenticated && !$auth.loading"
+            >Log In</a>
+            <a
             class="btn btn-light action-button"
             role="button"
             href="#"
             style="font-family: Montserrat, sans-serif;background-color: #FF9800;"
-            
-            >Sign Up</a
-          >
-          <a
+            v-if="!$auth.isAuthenticated && !$auth.loading"
+            @click="login"
+            >Sign Up</a>
+            <a
+            v-if="$auth.isAuthenticated"
             class="btn btn-light action-button"
             role="button"
             href="#"
             style="font-family: Montserrat, sans-serif;background-color: #FF9800;"
-            
-            >Logout</a
-          ></span>
+            @click="logout"            
+            >Logout</a>            
+         </div>
       </div>
     </div>
   </nav>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    login() {
+      this.$auth.loginWithRedirect();
+    },
+    logout() {
+      this.$auth.logout();
+      this.$router.push({ path: "/" });
+    }
+  }
+};
 </script>
 
 <style>
