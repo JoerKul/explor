@@ -1,12 +1,12 @@
 <template>
-  <div class="article-clean">
+  <div class="article-clean features-boxed">
     <div class="container">
       <div class="row">
         <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
           <div class="intro">
-            <h1 class="text-center">{{title}}</h1>
+            <h1 class="text-center">{{ title }}</h1>
             <p class="text-center">
-              <span class="by">by</span> <a href="#">{{name}}</a
+              <span class="by">by</span> <a href="#">{{ name }}</a
               ><span class="date">Sept 8th, 2016 </span>
             </p>
           </div>
@@ -76,8 +76,7 @@ export default {
       url: "",
       name: "",
       title: "",
-      location: "Frankfurt",
-
+      location: "Frankfurt"
     };
   },
   created() {
@@ -90,6 +89,11 @@ export default {
 </script>
 
 <style scoped>
+.features-boxed {
+  color: #313437;
+  background-color: #eef4f7;
+}
+
 .article-clean {
   color: #56585b;
   background-color: #fff;

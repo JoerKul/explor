@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-container">
+  <div class="flex-container features-boxed">
     <div v-for="item of result" v-bind:key="item.id" class="box">
       <figure class="snip1527">
         <div class="image">
@@ -18,7 +18,14 @@
           </p>
         </figcaption>
         <router-link
-          :to="{ name: 'Detail', params: { url: item.urls.small, name: item.user.name, title: item.description} }" 
+          :to="{
+            name: 'Detail',
+            params: {
+              url: item.urls.small,
+              name: item.user.name,
+              title: item.description
+            }
+          }"
           class="nav-link"
           href="detail.html"
           style="font-family: Montserrat, sans-serif;font-weight: bold;"
@@ -76,6 +83,11 @@ export default {
   background: #fff;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.features-boxed {
+  color: #313437;
+  background-color: #eef4f7;
 }
 
 .box {
