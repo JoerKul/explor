@@ -2,17 +2,6 @@
 
 import { register } from "register-service-worker";
 
-const requestNotificationPermission = async () => {
-  const permission = await window.Notification.requestPermission();
-  // value of permission can be 'granted', 'default', 'denied'
-  // granted: user has accepted the request
-  // default: user has dismissed the notification permission popup by clicking on x
-  // denied: user has denied the request.
-  if (permission !== "granted") {
-    throw new Error("Permission not granted for Notification");
-  }
-};
-
 function showNotification() {
   Notification.requestPermission(function(result) {
     if (result === "granted") {
@@ -65,10 +54,5 @@ if ("serviceWorker" in navigator) {
 if ("PushManager" in window) {
   console.log("Push API Supported!" + Notification.permission);
 }
-
-const main = async () => {
-  const permission = await requestNotificationPermission();
-  showNotification();
-};
 
 setTimeout(showNotification, 3000);
