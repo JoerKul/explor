@@ -46,15 +46,24 @@
             class="login"
             href="login.html"
             style="font-family: Montserrat, sans-serif;"
+            
             >Log In</a
           ><a
             class="btn btn-light action-button"
             role="button"
             href="#"
             style="font-family: Montserrat, sans-serif;background-color: #FF9800;"
+            
             >Sign Up</a
-          ></span
-        >
+          >
+          <a
+            class="btn btn-light action-button"
+            role="button"
+            href="#"
+            style="font-family: Montserrat, sans-serif;background-color: #FF9800;"
+            
+            >Logout</a
+          ></span>
       </div>
     </div>
   </nav>
