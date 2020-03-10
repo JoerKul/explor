@@ -6,7 +6,7 @@ const DEFAULT_REDIRECT_CALLBACK = () =>
 
 let instance;
 
-export const getInstance = () => console.log('get instance'); instance;
+export const getInstance = () => instance;
 
 export const useAuth0 = ({
   onRedirectCallback = DEFAULT_REDIRECT_CALLBACK,
