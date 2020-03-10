@@ -3,11 +3,12 @@
     class="navbar navbar-light navbar-expand-md navigation-clean-button better-bootstrap-nav-left"
   >
     <div class="container">
-      <a
+      <router-link
+      to="/"
         class="navbar-brand"
         href="/"
         style="font-family: 'Kaushan Script', cursive;font-size: 36px;padding-top: 0px;color: #FF8900;"
-        >Obcon</a
+        >Obcon</router-link
       ><button
         data-toggle="collapse"
         class="navbar-toggler"
@@ -23,49 +24,104 @@
       >
         <ul class="nav navbar-nav mr-auto">
           <li class="nav-item" role="presentation">
-            <router-link to="/events" class="nav-link"
+            <router-link
+              to="/events"
+              class="nav-link"
               href="events.html"
               style="font-family: Montserrat, sans-serif;font-weight: bold;"
-              >Events</router-link>
+              >Events</router-link
+            >
           </li>
           <li class="nav-item" role="presentation">
-            <router-link to="/speaker" class="nav-link"
+            <router-link
+              to="/speaker"
+              class="nav-link"
               href="speaker.html"
               style="font-family: Montserrat, sans-serif;font-weight: bold;"
-              >Speaker</router-link>
+              >Speaker</router-link
+            >
           </li>
           <li class="nav-item" role="presentation">
-            <router-link to="/about" class="nav-link"
+            <router-link
+              to="/about"
+              class="nav-link"
               href="about.html"
               style="font-family: Montserrat, sans-serif;font-weight: bold;"
-              >About</router-link>
+              >About</router-link
+            >
           </li>
         </ul>
-        <div class="navbar-text actions">
+        <span class="navbar-text actions">
           <a
             class="login"
             href=""
             style="font-family: Montserrat, sans-serif;"
-            @click="login"
+            @click.prevent="login"
             v-if="!$auth.isAuthenticated && !$auth.loading"
-            >Log In</a>
-            <a
+            >Log In</a
+          >
+          <a
             class="btn btn-light action-button"
             role="button"
             href="#"
             style="font-family: Montserrat, sans-serif;background-color: #FF9800;"
-            v-if="!$auth.isAuthenticated && !$auth.loading"
-            @click="login"
-            >Sign Up</a>
+            v-if="!$auth.loading && !$auth.isAuthenticated"
+            @click.prevent="login"
+            >Sign Up</a
+          >
+          <img
+            v-if="$auth.isAuthenticated"
+            src="https://randomuser.me/api/portraits/men/32.jpg"
+            alt="Proflile Image"
+            style="display: inline-block; border-radius: 50%;height: 45px;width: 45px;"
+          />
+          <li
+            v-if="$auth.isAuthenticated"
+            class="nav-item dropdown nav-link"
+            style="font-family: Montserrat, sans-serif;font-weight: bold;display: inline-block;"
+          >
             <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >{{ $auth.user.name }}
+            </a>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item"
+                ><i class="fa fa-user"></i
+                ><span style="padding-left: 8px; display: inline-block;"
+                  >Profile</span
+                ></a
+              >
+              <a href="#" class="dropdown-item"
+                ><i class="fa fa-cog"></i
+                ><span style="padding-left: 8px; display: inline-block;"
+                  >Settings</span
+                ></a
+              >
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item"
+                ><i class="fa fa-bell"></i
+                ><span style="padding-left: 8px; display: inline-block;"
+                  >Notifcations</span
+                ></a
+              >
+            </div>
+          </li>
+          <a
             v-if="$auth.isAuthenticated"
             class="btn btn-light action-button"
             role="button"
             href="#"
             style="font-family: Montserrat, sans-serif;background-color: #FF9800;"
-            @click="logout"            
-            >Logout</a>            
-         </div>
+            @click.prevent="logout"
+            >Logout</a
+          >
+        </span>
       </div>
     </div>
   </nav>
