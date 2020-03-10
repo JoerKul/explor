@@ -1,4 +1,7 @@
-import { getInstance } from "./authWrapper";
+// code from auth0.com/docs/getting-started best practise
+// https://github.com/auth0-samples
+
+https: import { getInstance } from "./authWrapper";
 
 export const authGuard = (to, from, next) => {
   const authService = getInstance();

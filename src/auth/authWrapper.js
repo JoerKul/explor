@@ -1,3 +1,6 @@
+// code from auth0.com/docs/getting-started best practise
+// https://github.com/auth0-samples
+
 import Vue from "vue";
 import createAuth0Client from "@auth0/auth0-spa-js";
 
