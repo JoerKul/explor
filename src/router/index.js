@@ -2,7 +2,6 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import { authGuard } from "../auth";
 
-
 Vue.use(VueRouter);
 
 const routes = [
