@@ -17,7 +17,8 @@
       <div class="row justify-content-center features">
         <div class="col-sm-6 col-md-5 col-lg-4 item">
           <div class="box">
-            <img alt="cat_icon_brain"
+            <img
+              alt="cat_icon_brain"
               class="img-fluid"
               src="../assets/brain.svg"
               style="  width: 108px;
@@ -51,7 +52,8 @@
         </div>
         <div class="col-sm-6 col-md-5 col-lg-4 item">
           <div class="box">
-            <img alt="cat_icon_band"
+            <img
+              alt="cat_icon_band"
               class="img-fluid"
               src="../assets/band.svg"
               style="  width: 108px;
@@ -85,7 +87,8 @@
         </div>
         <div class="col-sm-6 col-md-5 col-lg-4 item">
           <div class="box">
-            <img alt="cat_icon_work"
+            <img
+              alt="cat_icon_work"
               class="img-fluid"
               src="../assets/workbench.svg"
               style="  width: 108px;
@@ -120,7 +123,8 @@
         </div>
         <div class="col-sm-6 col-md-5 col-lg-4 item">
           <div class="box">
-            <img alt="cat_icon_router"
+            <img
+              alt="cat_icon_router"
               class="img-fluid"
               src="../assets/router.svg"
               style="  width: 108px;
@@ -154,7 +158,8 @@
         </div>
         <div class="col-sm-6 col-md-5 col-lg-4 item">
           <div class="box">
-           <img alt="cat_icon_raid"
+            <img
+              alt="cat_icon_raid"
               class="img-fluid"
               src="../assets/raid.svg"
               style="  width: 108px;
@@ -188,7 +193,8 @@
         </div>
         <div class="col-sm-6 col-md-5 col-lg-4 item">
           <div class="box">
-            <img alt="cat_icon_mobile"
+            <img
+              alt="cat_icon_mobile"
               class="img-fluid"
               src="../assets/mobile.svg"
               style="  width: 108px;
@@ -236,7 +242,8 @@
             class="box"
             style="margin-bottom: 36px;padding: 30px;padding-right: 12px;padding-left: 12px;"
           >
-            <img alt="event_icon_bosch"
+            <img
+              alt="event_icon_bosch"
               class="img-fluid"
               src="../assets/boschIoT.png"
               style="width: 266px;margin-top: 0px;margin-bottom: 0px;height: 148px;"
@@ -261,7 +268,8 @@
             class="box"
             style="margin-bottom: 36px;padding: 30px;padding-right: 12px;padding-left: 12px;"
           >
-            <img alt="event_icon_kube"
+            <img
+              alt="event_icon_kube"
               class="img-fluid"
               src="../assets/kubernetes-februar-eventbrite-banner-1.png"
               style="width: 266px;margin-top: 0px;margin-bottom: 0px;height: 148px;"
@@ -286,7 +294,8 @@
             class="box"
             style="margin-bottom: 36px;padding: 30px;padding-right: 12px;padding-left: 12px;"
           >
-            <img alt="event_icon_iot"
+            <img
+              alt="event_icon_iot"
               src="../assets/iot.png"
               style="width: 266px;margin-top: 0px;margin-bottom: 0px;height: 148px;"
             />
@@ -385,7 +394,7 @@ export default {};
   margin-bottom: 20px;
 }
 
-.learn-more{
+.learn-more {
   color: #0037ff;
 }
 </style>

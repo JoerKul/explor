@@ -1,3 +1,6 @@
+// code from bootsnipp.com community modified by me
+https://bootsnipp.com/snippets
+
 <template>
   <div class="container">
     <div class="row" id="user-profile">
