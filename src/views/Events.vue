@@ -9,9 +9,9 @@
     </div>
     <div class="flex-container features-boxed">
       <div v-for="item of result" v-bind:key="item.id" class="box">
-        <figure class="snip1527">
+        <figure class="product">
           <div class="image">
-            <img :src="item.urls.regular" alt="pr-sample23" />
+            <img :src="item.urls.regular" :alt="item.id" />
           </div>
           <figcaption>
             <div class="date">
@@ -88,64 +88,64 @@ export default {
 
 <style scoped>
 .flex-container {
+  flex-wrap: wrap;
   display: flex;
   background: #fff;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
 .features-boxed {
-  color: #313437;
   background-color: #eef4f7;
+  color: #313437;
 }
 
 .box {
   padding: 8px;
 }
 
-.snip1527 {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  color: #ffffff;
+.product {
   float: left;
-  font-family: "Lato", Arial, sans-serif;
-  font-size: 16px;
-  margin: 10px 1%;
-  max-width: 360px;
-  min-width: 250px;
-  overflow: hidden;
-  position: relative;
-  text-align: left;
+  color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   width: 100%;
-}
-
-.snip1527 * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-}
-
-.snip1527 img {
-  max-width: 100%;
-  vertical-align: top;
+  min-width: 250px;
+  font-size: 16px;
   position: relative;
+  max-width: 360px;
+  text-align: left;
+  overflow: hidden;
+  font-family: "Lato", Arial, sans-serif;
+  margin: 10px 1%;
 }
 
-.snip1527 figcaption {
-  padding: 25px 20px 25px;
-  position: absolute;
+.product * {
+  -webkit-box-sizing: border-box;
+  transition: all 0.25s ease;
+  -webkit-transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.product img {
+  position: relative;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.product figcaption {
   bottom: 0;
+  position: absolute;
+  padding: 25px 20px 25px;
   z-index: 1;
 }
 
-.snip1527 figcaption:before {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #700877;
+.product figcaption:before {
   content: "";
+  left: 0;
+  top: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: #700877;
   background: -moz-linear-gradient(
     90deg,
     #e44e09 0%,
@@ -163,63 +163,63 @@ export default {
   z-index: -1;
 }
 
-.snip1527 .date {
-  background-color: #fff;
-  border-radius: 50%;
+.product .date {
   color: #700877;
-  font-size: 18px;
-  font-weight: 700;
+  border-radius: 50%;
   min-height: 48px;
+  background-color: #fff;
+  font-weight: 700;
+  font-size: 18px;
   min-width: 48px;
-  padding: 10px 0;
   position: absolute;
-  right: 15px;
-  text-align: center;
-  text-transform: uppercase;
   top: -25px;
+  text-transform: uppercase;
+  padding: 10px 0;
+  text-align: center;
+  right: 15px;
 }
 
-.snip1527 .date span {
+.product .date span {
   display: block;
   line-height: 14px;
 }
 
-.snip1527 .date .month {
+.product .date .month {
   font-size: 11px;
 }
 
-.snip1527 h3,
-.snip1527 p {
-  margin: 0;
+.product h3,
+.product p {
   padding: 0;
+  margin: 0;
 }
 
-.snip1527 h3 {
+.product h3 {
   display: inline-block;
-  font-weight: 700;
-  letter-spacing: -0.4px;
   margin-bottom: 5px;
+  letter-spacing: -0.4px;
+  font-weight: 700;
 }
 
-.snip1527 p {
-  font-size: 0.8em;
-  line-height: 1.6em;
+.product p {
   margin-bottom: 0px;
+  line-height: 1.6em;
+  font-size: 0.8em;
 }
 
-.snip1527 a {
+.product a {
   left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  position: absolute;
   z-index: 1;
+  top: 0;
+  right: 0;
+  position: absolute;
+  bottom: 0;
 }
 
-.snip1527:hover img,
-.snip1527.hover img {
-  -webkit-transform: scale(1.1);
+.product:hover img,
+.product.hover img {
   transform: scale(1.1);
+  -webkit-transform: scale(1.1);
 }
 
 img {
