@@ -1,36 +1,45 @@
 <template>
-  <div class="flex-container features-boxed">
-    <div v-for="item of result" v-bind:key="item.id" class="box">
-      <figure class="snip1527">
-        <div class="image">
-          <img :src="item.urls.regular" alt="pr-sample23" />
-        </div>
-        <figcaption>
-          <div class="date">
-            <span class="day">{{ randomDay() }}</span
-            ><span class="month"> {{ monthNames[randomMonth()] }}</span>
+  <div class="features-boxed">
+    <div class="intro">
+      <h2 class="text-center py-4">Events</h2>
+      <p class="text-center">
+        Nunc luctus in metus eget fringilla. Aliquam sed justo ligula.
+        Vestibulum nibh erat, pellentesque ut laoreet vitae.
+      </p>
+    </div>
+    <div class="flex-container features-boxed">
+      <div v-for="item of result" v-bind:key="item.id" class="box">
+        <figure class="snip1527">
+          <div class="image">
+            <img :src="item.urls.regular" alt="pr-sample23" />
           </div>
-          <h3>{{ item.description }}</h3>
-          <p>
-            {{ item.alt_description }} You know what we need, Hobbes? We need an
-            attitude. Yeah, you can&#39;t be cool if you don&#39;t have an
-            attitude.
-          </p>
-        </figcaption>
-        <router-link
-          :to="{
-            name: 'Detail',
-            params: {
-              url: item.urls.small,
-              name: item.user.name,
-              title: item.description
-            }
-          }"
-          class="nav-link"
-          href="detail.html"
-          style="font-family: Montserrat, sans-serif;font-weight: bold;"
-        ></router-link>
-      </figure>
+          <figcaption>
+            <div class="date">
+              <span class="day">{{ randomDay() }}</span
+              ><span class="month"> {{ monthNames[randomMonth()] }}</span>
+            </div>
+            <h3>{{ item.description }}</h3>
+            <p>
+              {{ item.alt_description }} You know what we need, Hobbes? We need
+              an attitude. Yeah, you can&#39;t be cool if you don&#39;t have an
+              attitude.
+            </p>
+          </figcaption>
+          <router-link
+            :to="{
+              name: 'Detail',
+              params: {
+                url: item.urls.small,
+                name: item.user.name,
+                title: item.description
+              }
+            }"
+            class="nav-link"
+            href="detail.html"
+            style="font-family: Montserrat, sans-serif;font-weight: bold;"
+          ></router-link>
+        </figure>
+      </div>
     </div>
   </div>
 </template>
@@ -211,10 +220,6 @@ export default {
 .snip1527.hover img {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
-}
-
-img {
-  border-radius: 5px;
 }
 
 img {

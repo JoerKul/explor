@@ -4,7 +4,7 @@
   >
     <div class="container">
       <router-link
-      to="/"
+        to="/"
         class="navbar-brand"
         href="/"
         style="font-family: 'Kaushan Script', cursive;font-size: 36px;padding-top: 0px;color: #FF8900;"
@@ -91,11 +91,11 @@
               >{{ $auth.user.name }}
             </a>
             <div class="dropdown-menu">
-              <a href="#" class="dropdown-item"
+              <router-link to="/profile" href="#" class="dropdown-item"
                 ><i class="fa fa-user"></i
                 ><span style="padding-left: 8px; display: inline-block;"
                   >Profile</span
-                ></a
+                ></router-link
               >
               <a href="#" class="dropdown-item"
                 ><i class="fa fa-cog"></i

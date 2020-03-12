@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import { authGuard } from "../auth";
 
 
 Vue.use(VueRouter);
@@ -29,6 +30,12 @@ const routes = [
     path: "/about",
     name: "About",
     component: () => import("../views/About.vue")
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: () => import("../views/Profile.vue"),
+    beforeEnter: authGuard
   }
 ];
 

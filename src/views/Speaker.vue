@@ -3,18 +3,25 @@
     <div class="team-boxed">
       <div class="container">
         <div class="intro">
-          <h2 class="text-center">Speaker</h2>
+          <h2 class="text-center py-4">Speaker</h2>
           <p class="text-center">
             Nunc luctus in metus eget fringilla. Aliquam sed justo ligula.
             Vestibulum nibh erat, pellentesque ut laoreet vitae.
           </p>
         </div>
         <div class="row people">
-          <div  v-for="item of result" v-bind:key="item.id.value" class="col-md-6 col-lg-4 item">
+          <div
+            v-for="item of result"
+            v-bind:key="item.id.value"
+            class="col-md-6 col-lg-4 item"
+          >
             <div class="box">
-              <img class="rounded-circle" :src="item.picture.large" />
-              <h3 class="name">{{item.name.first}} {{item.name.last}}</h3>
-              <p class="title">{{item.name.first}}</p>
+              <img
+                class="rounded-circle img-padding"
+                :src="item.picture.large"
+              />
+              <h3 class="name">{{ item.name.first }} {{ item.name.last }}</h3>
+              <p class="title">{{ item.name.first }}</p>
               <p class="description">
                 Aenean tortor est, vulputate quis leo in, vehicula rhoncus
                 lacus. Praesent aliquam in tellus eu gravida. Aliquam varius
@@ -74,5 +81,9 @@ export default {
   margin: 0 10px;
   display: inline-block;
   opacity: 0.7;
+}
+
+.img-padding {
+  padding-bottom: 5px;
 }
 </style>
